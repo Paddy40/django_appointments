@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% block title %}
+Appointments
+{% endblock %}
+{% block content %}
+      <!-- BODY -->  
+      <!-- style='display: flex;flex-direction:column;' -->
+        <div class="row row1 d-flex flex-column"  >
+          <div class='row'>
+           <h3 >Appointment request </h3>
+          </div>
+          
+          <div class='row appt' style='display:flex;'>
+            <div id='docdetails' class="col-md-6">
+            </div> 
+          
+            <div class="col-md-6 d-flex justify-content-left" style='width:100%'>
+              {% if messages %}
+              {% for message in messages %}
+              <div class="alert alert-success" role="alert"style="width: 100%;">
+              <h3>{{message}}</h3>
+              {% endfor %}
+              {% endif %}
+              
+              {% if form.errors %}
+              {% for field in form %}
+                  {% for error in field.errors %}
+                      <div class="alert alert-danger">
+                          <strong>{{ error|escape }}</strong>
+                      </div>
+                  {% endfor %}
+              {% endfor %}
+              {% for error in form.non_field_errors %}
+                  <div class="alert alert-danger">
+                      <strong>{{ error|escape }}</strong>
+                  </div>
+              {% endfor %}
+               {% endif %}
+               <form id='app-form' class='row1' method="POST" action="appointments" style="width: 100%;">
+                {% csrf_token %}
+                <div class="form-row" id='adminmessage' hidden='true'>
+                  <div>
+                    <p hidden='true'>Please input and verify patient name and id</p>
+                  </div>
+                  <div >  
+                  <label  for="patientname">Patient Name</label>
+                  <input type='text' name="patientname" id='patientname' hidden='true' ></input>
+                  <label for="patientid">Patient Id</label>
+                  <input type='text' name="patientid" id='patientid' hidden='true' label='Patient Id'></input>
+                  </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                            <label for="date">Choose Appointment Date </label>
+                            <input type="date" name="date" class="form-control" id="date" onchange="showappointments()">
+                    </div>
+                </div>
+               <div class="form-row">
+                <div class="form-group col-md-6" id='app-time' hidden='true'>
+                  Choose Appointment Time<br><br>
+                  <div class='row'>
+                  <button type="button" class="btn btn-outline-success" onclick="setTime(this.innerHTML)" id="10:00" >10:00</button>
+                  <button type="button" class="btn btn-outline-success" onclick="setTime(this.innerHTML)" id="10:30">10:30</button>
+                  <button type="button" class="btn btn-outline-success" onclick="setTime(this.innerHTML)" id="11:00">11:00</button>
+                  <button type="button" class="btn btn-outline-success" onclick="setTime(this.innerHTML)" id="11:30">11:30</button>
+                </div>
+                <div class='row'>
+                  <button type="button" class="btn btn-outline-success" onclick="setTime(this.innerHTML)" id="12:00">12:00</button>
+                  <button type="button" class="btn btn-outline-success" onclick="setTime(this.innerHTML)" id="12:30">12:30</button>
+                  <button type="button" class="btn btn-outline-success" onclick="setTime(this.innerHTML)" id="1:00">14:00</button>
+                  <button type="button" class="btn btn-outline-success" onclick="setTime(this.innerHTML)" id="10:00">14:30</button>
+                </div><div class='row'>
+                  <button type="button" class="btn btn-outline-success" onclick="setTime(this.innerHTML)" id="10:00">15:00</button>
+                  <button type="button" class="btn btn-outline-success" onclick="setTime(this.innerHTML)" id="10:00">15:30</button>
+                  <button type="button" class="btn btn-outline-success" onclick="setTime(this.innerHTML)" id="10:00">16:00</button>
+                  <button type="button" class="btn btn-outline-success" onclick="setTime(this.innerHTML)" id="10:00">16:30</button>
+                  <input type='text' name="time" id='time' hidden='true'></input>
+                  <input type='text' name='doctid' id='doctid' hidden='true'></input>
+                  <input type='text' name="docname" id='docname' hidden='true'></input>
+                  
+                </div>
+                </div>
+             </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+              </div>
+
+
+            </div>
+          </div>
+
+        </div>  
+
+{% endblock %}

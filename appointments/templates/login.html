@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}
+Login page
+{% endblock %}
+{% block content %}
+      <div class="row row1" >
+            <h2 >Login Portal</h2>
+            <div class="col-12">
+               <!-- Change to form when u connect database -->
+                <!-- <form target="_self">  -->
+                  <div class='form-group1'>
+                    <div class="form-group ">
+                      <label for="uname">Username</label>
+                      <input type="email" class="form-control" id="uname" aria-describedby="emailHelp" placeholder="Enter email">
+                    </div>
+                    <div class="form-group">
+                      <label for="password">Password</label>
+                      <input type="password" class="form-control" id="password" placeholder="Password">
+                    </div>
+                    <button type="submit" class="btn btn-success" onclick="login()">Submit</button>
+                    <button type="reset" class="btn btn-success">Reset</button>
+                <!-- </form> -->
+                </div>
+            </div>
+      </div>
+      <div class="row row1 d-flex flex-column" >
+          <div><h5>Are you new here?</h5></div>
+          <div>
+          <p><h6> Please click the link below to contact our admin to get your login details.You will be able to book appointments by calling our friendly and helpful admin team </h6> </p>
+          <a href = 'contact'>Contact Us</a></div>
+      </div>
+
+{% endblock %}

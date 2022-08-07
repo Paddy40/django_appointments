@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}
+Doctor home
+{% endblock %}
+{% block content %}
+      <!--BODY -->
+      <div class="row text-center" > 
+          <h5>Doctors page</h5>
+      </div>    
+      <div class="row flex-container text-center"> 
+        <div class="doctab">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a href="#todo" class="nav-link active" data-toggle="tab">Appointments</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#patient" class="nav-link" data-toggle="tab">Patient Records</a>
+
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane fade show active" id="todo">
+                 </div>
+                <div class="tab-pane fade" id="patient">
+                    <ul class="list-group">
+                        <li class="list-group-item">Call Back patient</li>
+                        <li class="list-group-item">Change or Cancel Appointment</li>
+                        <li class="list-group-item">Update Patient </li>
+                      </ul>
+                    
+                </div>
+                <div class="tab-pane fade" id="newuser">
+                    
+                </div>
+            </div>
+        </div>
+                         
+      </div>  
+  
+
+{% endblock %}

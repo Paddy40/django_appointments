@@ -1,0 +1,23 @@
+<h1>List of Customer</h1>
+    <br>
+    Search by the Date of Birth(DoB)<input id='search' type ='date' onchange="search()"></input>
+    <div id='cusTable'>
+        <table>
+            <thead>
+                <tr>
+                    <th>Fname</th>
+                    <th>Email</th>
+                    <th>DoB</th>
+                    <th>Address</th>
+                </tr>
+            </thead>
+            <tbody>{% for message in message_list %}
+                <tr>
+                    <td>{{ message.id }}</td>
+                    <td>{{ message.name }}</td>
+                    <td>{{ message.department }}</td>
+                    <td>{{ message.descr}}</td>
+                </tr>{% endfor %}
+            </tbody>
+        </table>
+    </div>

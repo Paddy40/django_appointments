@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}
+Blog
+{% endblock %}
+{% block content %}
+<h1>Blog</h1>
+<hr>
+ <a href='game' target='_blank'>Click here to play the game</a>
+<hr/>
+<div id='covid'>
+    <h3>Corona Awareness</h3>
+    <div class="container">
+        
+        <div class="row gx-5">
+           <img class='img-covid'src="/static/Images/covid.jpg"></img>
+        </div>
+        <h4>Important Links</h4>
+        <div class="row gx-5" >
+          <div class="col-6 col-md-4 p-3 border bg-light">
+              <a href='https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public/myth-busters' target='_blank'>Myth Busters</a>
+          </div>
+          <div class="col-6 col-md-4 p-3 border bg-light"><a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019" target='_blank'>What to do if you have symptoms?</a>
+          </div>
+          <div class="col-6 col-md-4 p-3 border bg-light"><a href="https://www.who.int/news-room/q-a-detail/coronavirus-disease-(covid-19)-vaccines" target='_blank'>Vaccination Questions</a>
+          </div>
+        </div>
+        <div class="row gx-5">
+          <div class="col-6 p-3 border bg-light">
+          <a href= 'https://www.rcog.org.uk/coronavirus-pregnancy' target='_blank'>Covid 19 & Pregnacy</a></div>
+          <div class="col-6 p-3 border bg-light">
+            <a href='https://www.scope.org.uk/advice-and-support/mental-health-and-coronavirus/' target='_blank'>Covid 19 & Mental Health</a></div>
+          </div>
+    </div>
+    
+
+</div>
+{% endblock %}

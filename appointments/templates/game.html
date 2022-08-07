@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+            width: 400px;
+            height: 400px;
+            position: relative;
+            background: yellow;
+            border: 2px solid black;
+        }
+        #animate {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            background-color: red;
+        }
+        #animate1 {
+            width: 15px;
+            height: 15px;
+            position: absolute;
+            background-color:green;
+        }
+</style>
+<script>
+    document.addEventListener("keydown", myMove)
+    function myMove(e) {
+        var elem = document.getElementById("animate"); 
+        var dot=document.getElementById('animate1');
+        var top=parseInt(elem.style.top);
+        var left=parseInt(elem.style.left);
+        var dottop=parseInt(dot.style.top);
+        var dotleft=parseInt(dot.style.left);
+        var count=0;
+        if(e.keyCode==37 && left>=10){
+            left-=10;
+            elem.style.left= left + "px";  
+            // move left
+        }
+        if(e.keyCode==38 && top>=10){
+                top-=10;
+             elem.style.top= top + "px";  
+        }  
+            // move up  
+            if(e.keyCode==39 && left<=340){
+            left+=10;
+            elem.style.left= left + "px" ; 
+            }    
+            // move right
+            if(e.keyCode==40 && top<=340){
+            top+=10;
+            elem.style.top= top + "px";
+        }    
+            // move down 
+          if ((top <= dottop + 15) && (top + 50 >= dottop) && (left <= dotleft + 15) && (left + 50 >= dotleft)) {
+            var dotmove = Math.floor(100*Math.random());
+            dot.style.left=dotmove+'px';
+            count=count+1;
+            document.getElementById('counter').textContent=count;
+            }
+            
+        }
+
+function myFunction() {
+    document.getElementById('container').hidden=false;
+    document.getElementById('score').hidden=false;
+    var timeleft = 60;
+    var downloadTimer = setInterval(function(){
+    timeleft--;
+    document.getElementById("countdowntimer").textContent = timeleft;
+    if(timeleft <= 0)
+        clearInterval(downloadTimer);
+    },1000);
+    
+}
+</script>
+
+</head>
+<body>
+    <div id ="container" hidden=true>
+        <div id ="animate" style="top: 175px; left:175px;">
+        </div>
+        <div id ="animate1" style="top: 100px; left:100px;">
+        </div>
+    </div>
+    <div><p> Time left is <span id="countdowntimer">60 </span> Seconds</p></div>
+    <div id='score' hidden=true><p>Congrats !!!  Your score is <span id="counter"></span></p></div>
+    <div id='game message'>
+        <h3>Lets see how many green bugs can we catch using the red square net in 60 seconds!!!</h3>
+        <p>Click the start button and use the arrow keys to move the red button</p>
+        <p>Click the button to start game</p>
+        <button onclick="myFunction()">Try it</button>
+
+    </div>
+    
+</body>
+</html>
+
+

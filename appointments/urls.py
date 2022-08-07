@@ -1,0 +1,25 @@
+from django.urls import path
+from appointments import views
+urlpatterns = [
+    path("filldropdowns/<depname>/<docname>", views.fillSearchpage, name='filldropdowns'),
+    path("filldocdiv/<docid>", views.fillDocdiv, name='filldocd'),
+    path("disabledocapp/<id>/<dat>", views.getdocapp, name='getdocapp'),
+    path("filldocapp/<q>",views.showdocAppt,name='docapp'),
+    path("getLogin/<uname>", views.getLogin, name='login'),
+    path("userAdd/", views.addPatient, name='adduser'),
+    path("appointments", views.addAppt, name='appointments'),
+    path("addLogin/", views.addLogins, name='addlogin'),
+    path("newpatient", views.addPatient, name='adduser'),
+    path("newpatient.html", views.addPatient, name='adduser'),
+    path("adminhome", views.addLogins, name='adminhome'),
+    path("adminhome.html", views.addLogins, name='adminhome'),
+    path("apphome", views.showapphome, name='apphome'),
+    path("apphome.html", views.showapphome, name='apphome'),
+    path("blog", views.showblog, name='blog'),
+    path("game", views.showgame, name='game'),
+    path("contact", views.addQue, name='contact'),
+    path("doctorhome", views.showdoctorhome, name='doctorhome'),
+    path("login", views.showlogin, name='login'),
+    path("search", views.showsearch, name='search'),
+    path("", views.showapphome, name="apphome"),
+]

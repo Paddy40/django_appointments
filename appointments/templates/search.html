@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}
+Search page
+{% endblock %}
+{% block content %}
+        
+        <!-- BODY -->
+        <div class="row">  
+            <h4>You can search for your Specialist based on their name or department</h4>     
+            <div class="col-12 ">
+               <!-- Change to form when u connect database -->
+                <!-- <form target="_self">  -->
+                  <div id='xyz'></div>
+                  <div class='form-group2'>
+                        <div>
+                            <span>
+                              <label for="dept">Department</label>
+                              <select name="dept" id="dept" onchange='getdropdowns()'>
+                              </select>
+                            </span>
+                            <span>
+                                <label for="doctor">Specialist</label>
+                                <select name="doctor" id="doctor" onchange='getdropdowns()'>
+                                </select>
+                            </span>
+                            <button type="submit" class="btn btn-success" onclick="myFunction()">Search</button>
+                        </div>
+                  <div>
+
+                        </div>
+                <!-- </form> -->
+            </div>    
+            </div>                                    
+        </div>  
+        <div class="row" >
+          
+          <!-- {% load static %} -->
+            <div id='id01' class="id01 d-flex flex-wrap"></div>
+        </div>   
+        
+{% endblock %}

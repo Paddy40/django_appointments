@@ -1,0 +1,84 @@
+.box-head-img{
+     width: 100px;  
+    
+}
+div.checkbox{
+    float:left;
+    width:100%;
+}
+
+.row{
+    justify-content: space-around;
+
+}
+.nav-link{
+    color: green;
+    border-bottom: 2px;
+    border-right: 2px;
+    border-top: black;
+}
+.body-content{
+    margin: 10px;
+    border: 5px solid green;
+    justify-content: space-around;
+    overflow: hidden;
+}
+hr{
+    color: green;
+    size: 8;
+    width:90%;
+}
+
+a{
+    color: green;
+}
+button{
+    background-color: green;
+}
+.row1{
+    color: grey;
+    background-color: white;
+        margin: 20px;
+        font-size: 2vh;
+   }
+.row-head{
+    height:200px;
+    margin:none;
+}
+
+.header3{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.card-img-top {
+    object-fit: contain;
+    }
+.card{
+    width: 20rem;
+    margin: 10px;
+    object-fit: contain;
+}
+
+.foot{
+
+    background-color: rgb(33, 190, 33);
+}
+
+.id01{
+    justify-content: space-around;
+    align-items: center;
+    
+} 
+
+  .img-head{
+      margin-right:200px ;
+  }
+.appt{
+    justify-content: space-around;
+    border: 5px solid orangered;
+    display: flex;
+    margin: 20px;
+    align-items: left;
+
+}

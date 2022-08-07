@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}
+Home page
+{% endblock %}
+{% block content %}
+<h1>Contact us</h1>
+
+<hr>
+<h3>ESSVEE HOSPITALS</h3>
+<p>
+
+        # 506, M.T.H. Road, Ambattur,
+         Chennai – 600053.
+</p>
+<hr>
+<h5>Call Us </h5>
+<p>044 26583940</p>
+<p>044 26580181</p> 
+<p>044 26581010</p>
+<hr>
+<h5>Have our Customer Service Representative call you<h5>
+    {% if messages %}
+    {% for msg in messages %}
+      <div class="alert alert-info alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        {{msg.message}}
+      </div>
+    {% endfor %}
+  {% endif %}
+  
+<form method="POST" class='row1' action="contact">
+        {% csrf_token %}
+        {{ form.as_p }}
+    <button type="submit">Save</button></form>
+
+
+{% endblock %}

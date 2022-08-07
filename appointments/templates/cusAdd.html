@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+{% block title %}
+add users
+{% endblock %}
+{% block content %}
+<form method="POST" action="/patientAdd/">
+    {% csrf_token %}
+    {{ form.as_p }}
+<button type="submit">Save</button></form>
+{% endblock %}
+
